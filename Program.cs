@@ -4,7 +4,6 @@ namespace Methods
 {
     class Program
     {
-        // ==================== РАЗДЕЛ 1: Обзор методов ====================
         // Задачи 1,2,7,9,12,13,14,19 - Сложение двух чисел
         static int AddTwo(int a, int b) => a + b;
 
@@ -29,7 +28,6 @@ namespace Methods
             return result;
         }
 
-        // ==================== РАЗДЕЛ 2: Процедуры vs Функции ====================
         // Задачи 21,24,29,33,34 - Квадрат числа
         static int Square(int x) => x * x;
 
@@ -52,7 +50,6 @@ namespace Methods
         static void DemoProcedure(int x) { Console.WriteLine($"Процедура: {x}"); }
         static int DemoFunction(int x) => x * 2;
 
-        // ==================== РАЗДЕЛ 3: Работа с массивами и строками ====================
         // Задачи 46,50,52,54,73,75 - Минимум в массиве
         static int MinArray(int[] arr)
         {
@@ -78,7 +75,6 @@ namespace Methods
         // Задачи 55,58,61,67,70,74 - Сложение ТРЕХ чисел (переименован)
         static int AddThree(int a, int b, int c) => a + b + c;
 
-        // ==================== РАЗДЕЛ 4: Управляющая структура return ====================
         // Задачи 76,77,82,85,91,94,98,100,101 - Код ошибки
         static int ValidateInput(int x)
         {
@@ -90,7 +86,7 @@ namespace Methods
         static bool DivisibleByThree(int x) => x % 3 == 0;
 
         // Задачи 80,83,87,89,93,99,104 - Ранний return
-        static string EarlyReturn(string? s)  // ✅ ? для nullable
+        static string EarlyReturn(string? s)
         {
             if (string.IsNullOrEmpty(s)) return "Пустая строка";
             return $"Обработано: {s}";
@@ -107,7 +103,6 @@ namespace Methods
             return "Положительное";
         }
 
-        // ==================== РАЗДЕЛ 5: Guard Clauses ====================
         // Задачи 106,108,113,119,122,123,125,136,138 - Деление на ноль
         static double SafeDivide(double a, double b)
         {
@@ -143,7 +138,6 @@ namespace Methods
             Console.WriteLine(s);
         }
 
-        // ==================== РАЗДЕЛ 6: Защита номинального варианта ====================
         // Задачи 141,143,146,147,152,153,155,165,170 - Отрицательная сумма
         static string ValidateSum(double sum)
         {
@@ -179,7 +173,6 @@ namespace Methods
             Console.WriteLine("Дата OK");
         }
 
-        // ==================== РАЗДЕЛ 7: ref и out аргументы ====================
         // Задачи 171,172,175,180,182,190,191,197,199 - Деление (частное + остаток)
         static int Divide(int a, int b, out int remainder)
         {
@@ -212,71 +205,68 @@ namespace Methods
             b = temp;
         }
 
-        // ==================== MAIN - ДЕМОНСТРАЦИЯ ВСЕХ 200 ЗАДАЧ ====================
+        // дЕМОНСТРАЦИЯ
         static void Main()
         {
-            Console.WriteLine("=== ДЕМОНСТРАЦИЯ 200 ЗАДАЧ ПО МЕТОДАМ ===");
 
-            // РАЗДЕЛ 1: Обзор методов (20 задач)
+            // Обзор методов (20 задач)
             Console.WriteLine("\n1-20. Обзор методов:");
-            Console.WriteLine($"1-2,7,9,12-14,19: {AddTwo(5, 3)}"); // 8
-            Console.WriteLine($"3: {MaxOfThree(1, 3, 2)}"); // 3
-            Console.WriteLine($"4-6,15-16: {IsEven(4)}"); // True
-            PrintRange(1, 3); // 1 2 3
-            Console.WriteLine($"11: {Factorial(5)}"); // 120
+            Console.WriteLine($"1-2,7,9,12-14,19: {AddTwo(5, 3)}");
+            Console.WriteLine($"3: {MaxOfThree(1, 3, 2)}");
+            Console.WriteLine($"4-6,15-16: {IsEven(4)}");
+            PrintRange(1, 3);
+            Console.WriteLine($"11: {Factorial(5)}");
 
-            // РАЗДЕЛ 2: Процедуры vs Функции (25 задач)
+            // Процедуры vs Функции (25 задач)
             Console.WriteLine("\n21-45. Процедуры vs Функции:");
-            Console.WriteLine($"21,24,29,33,34: {Square(5)}"); // 25
-            Console.WriteLine($"22,26,42: {IsPalindrome("radar")}"); // True
-            int x = 10; Increment(ref x); Console.WriteLine($"23,25,30,38,45: {x}"); // 11
-            HelloWorld(); // Hello, World!
-            DemoProcedure(5); // Процедура: 5
-            Console.WriteLine($"27,31-35,40-43: {DemoFunction(5)}"); // 10
+            Console.WriteLine($"21,24,29,33,34: {Square(5)}");
+            Console.WriteLine($"22,26,42: {IsPalindrome("radar")}");
+            int x = 10; Increment(ref x); Console.WriteLine($"23,25,30,38,45: {x}");
+            HelloWorld();
+            DemoProcedure(5);
+            Console.WriteLine($"27,31-35,40-43: {DemoFunction(5)}");
 
-            // РАЗДЕЛ 3: Массивы и строки (27 задач)
+            // Массивы и строки (27 задач)
             Console.WriteLine("\n46-74. Массивы и строки:");
             int[] arr = { 3, 1, 4, 1, 5 };
-            Console.WriteLine($"46,50,52,54,73,75: {MinArray(arr)}"); // 1
-            Console.WriteLine($"47,49,56,57,60,62,72: {AverageArray(arr):F2}"); // 2.80
-            Console.WriteLine($"48,63,65: {CopyArray(arr).Length}"); // 5
-            Console.WriteLine($"51,53,59,64,66,68,69,71: {StringLength("Hello")}"); // 5
-            Console.WriteLine($"55,58,61,67,70,74: {AddThree(1, 2, 3)}"); // 6
+            Console.WriteLine($"46,50,52,54,73,75: {MinArray(arr)}");
+            Console.WriteLine($"47,49,56,57,60,62,72: {AverageArray(arr):F2}");
+            Console.WriteLine($"48,63,65: {CopyArray(arr).Length}");
+            Console.WriteLine($"51,53,59,64,66,68,69,71: {StringLength("Hello")}");
+            Console.WriteLine($"55,58,61,67,70,74: {AddThree(1, 2, 3)}");
 
-            // РАЗДЕЛ 4: return (30 задач)
+            // return (30 задач)
             Console.WriteLine("\n76-105. Управляющая return:");
-            Console.WriteLine($"76,77,82,85,91,94,98,100,101: {ValidateInput(-1)}"); // -1
-            Console.WriteLine($"78,79,88,95-97: {DivisibleByThree(9)}"); // True
-            Console.WriteLine($"80,83,87,89,93,99,104: {EarlyReturn("test")}"); // Обработано: test
-            Console.WriteLine($"81,92,102,103,105: {NullIfEmpty("") == null}"); // True
-            Console.WriteLine($"84,86,90: {MultipleReturn(5)}"); // Положительное
+            Console.WriteLine($"76,77,82,85,91,94,98,100,101: {ValidateInput(-1)}");
+            Console.WriteLine($"78,79,88,95-97: {DivisibleByThree(9)}");
+            Console.WriteLine($"80,83,87,89,93,99,104: {EarlyReturn("test")}");
+            Console.WriteLine($"81,92,102,103,105: {NullIfEmpty("") == null}");
+            Console.WriteLine($"84,86,90: {MultipleReturn(5)}");
 
-            // РАЗДЕЛ 5: Guard Clauses (35 задач)
+            // Guard Clauses (35 задач)
             Console.WriteLine("\n106-140. Guard Clauses:");
-            Console.WriteLine($"106,108,113,119,122,123,125,136,138: {SafeDivide(10, 0)}"); // 0
-            Console.WriteLine($"107,112,120,124,126,128,131: {ValidateRequired("test")}"); // True
-            Console.WriteLine($"109,127,132,133,135,140: {InRange(5, 1, 10)}"); // True
-            ProcessArray(new int[0]); // Пустой - ничего не выводит
+            Console.WriteLine($"106,108,113,119,122,123,125,136,138: {SafeDivide(10, 0)}");
+            Console.WriteLine($"107,112,120,124,126,128,131: {ValidateRequired("test")}");
+            Console.WriteLine($"109,127,132,133,135,140: {InRange(5, 1, 10)}"); 
+            ProcessArray(new int[0]);
             try { ValidateNotNull(null); } catch { Console.WriteLine("114-116,121,129,130,134,139: Исключение"); }
 
-            // РАЗДЕЛ 6: Защита номинального (30 задач)
+            //Защита номинального (30 задач)
             Console.WriteLine("\n141-170. Защита номинального:");
-            Console.WriteLine($"141,143,146,147,152,153,155,165,170: {ValidateSum(-5)}"); // Ошибка
-            Console.WriteLine($"142,148,149,151,162,164: {ValidateAge(20)}"); // True
+            Console.WriteLine($"141,143,146,147,152,153,155,165,170: {ValidateSum(-5)}");
+            Console.WriteLine($"142,148,149,151,162,164: {ValidateAge(20)}");
             try { ValidatePassword("123"); } catch { Console.WriteLine("144,154,158,159,163,166,167,169: Исключение"); }
-            Console.WriteLine($"145,150,156,160,161: {IsEmailUnique("user@mail.com")}"); // True
+            Console.WriteLine($"145,150,156,160,161: {IsEmailUnique("user@mail.com")}");
             try { ValidateDate("invalid"); } catch { Console.WriteLine("157,168: Исключение"); }
 
-            // РАЗДЕЛ 7: ref/out (30 задач)
+            //ref/out (30 задач)
             Console.WriteLine("\n171-200. ref/out:");
-            int rem; Console.WriteLine($"171,172,175,180,182,190,191,197,199: {Divide(10, 3, out rem)}, остаток: {rem}"); // 3, 1
-            FillArray(out int[] filled); Console.WriteLine($"173,179,184,186,188: {filled[0]}"); // 0
-            string num = "123"; Console.WriteLine($"174,177,178,181,187,195,196,198: {TryParseNumber(num, out int res)}, {res}"); // True, 123
-            int val = 5; Increase(ref val); Console.WriteLine($"176,183,185,193: {val}"); // 15
-            int a = 1, b = 2; Swap(ref a, ref b); Console.WriteLine($"189,192,194,200: {a},{b}"); // 2,1
+            int rem; Console.WriteLine($"171,172,175,180,182,190,191,197,199: {Divide(10, 3, out rem)}, остаток: {rem}");
+            FillArray(out int[] filled); Console.WriteLine($"173,179,184,186,188: {filled[0]}");
+            string num = "123"; Console.WriteLine($"174,177,178,181,187,195,196,198: {TryParseNumber(num, out int res)}, {res}"); 
+            int val = 5; Increase(ref val); Console.WriteLine($"176,183,185,193: {val}");
+            int a = 1, b = 2; Swap(ref a, ref b); Console.WriteLine($"189,192,194,200: {a},{b}"); 
 
-            Console.WriteLine("\n=== ВСЕ 200 ЗАДАЧ ВЫПОЛНЕНЫ УСПЕШНО! ===");
-            Console.WriteLine("Нажмите любую клавишу...");
             Console.ReadKey();
         }
     }
